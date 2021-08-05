@@ -1,7 +1,7 @@
 [
   {
     "repository":  "GZR-Kernels/Optimus_Drunk_Alioth",
-    "target_path": "kernel/xiaomi/alioth",
+    "target_path": "kernel/xiaomi/sm8250",
     "branch":      "11.0"
   },
   {
