@@ -24,6 +24,9 @@
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/smart_fps_value           u:object_r:vendor_sysfs_smart_fps:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps               u:object_r:vendor_sysfs_dynamic_fps:s0
 
+# Displayfeature
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service    u:object_r:hal_displayfeature_default_exec:s0
+
 # UFS Devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/msadp                     u:object_r:vendor_efs_boot_dev:s0
 
@@ -33,7 +36,7 @@
 
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2.1-service\.xiaomi_kona                      u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_kona              u:object_r:hal_lineage_fod_kona_exec:s0
+/vendor/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.1-service\.xiaomi_kona              u:object_r:hal_lineage_fod_kona_exec:s0
 
 # Fingerprint - devices
 /dev/goodix_fp                                                          u:object_r:fingerprint_device:s0
@@ -42,9 +45,6 @@
 /data/vendor/goodix(/.*)?                                               u:object_r:fingerprint_data_file:s0
 /data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_data_file:s0
 /data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_data_file:s0
-
-# Fingerprint - FOD
-/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui                                           u:object_r:sysfs_fod:s0
 
 # Hexagon DSP-side executable needed for Halide operation
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
@@ -92,6 +92,10 @@
 # Thermal
 /vendor/bin/mi_thermald                                                 u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?                                              u:object_r:thermal_data_file:s0
+
+# Touchfeature
+/dev/xiaomi-touch                                                       u:object_r:touchfeature_device:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service      u:object_r:hal_touchfeature_default_exec:s0
 
 # USB
 /vendor/bin/init\.mi\.usb\.sh                                           u:object_r:vendor_qti_init_shell_exec:s0
