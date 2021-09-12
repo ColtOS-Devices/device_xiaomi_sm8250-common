@@ -14,12 +14,7 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "com.aicp.settings.resources",
-        "androidx.core_core",
-        "androidx.preference_preference",
-        "AicpGear-preference",
-        "AicpGear-util",
-        "SettingsLib",
+        "org.lineageos.settings.resources",
     ],
 
     optimize: {
